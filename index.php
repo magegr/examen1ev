@@ -31,19 +31,13 @@
                 1. El objetivo es llegar a la casilla final.<br>
                 2. Para moverte, elige una casilla válida que esté en la misma fila o columna y que coincida en número o color con tu casilla actual.<br>
                 3. La casilla mas a la izquierda es la (0,0).<br>
-                4. Introduce las cordenadss de la casilla de fin, esta aparecera de color gris.<br>
-                5. Si llegas a la casilla final, ¡has ganado!<br>
-                6. Para moverte por el juego tendrás que indicar primero la casilla en la que estass y a la que te quieras mover.
+                4. Si llegas a la casilla final, ¡has ganado!<br>
+                5. Para moverte por el juego tendrás que indicar primero la casilla en la que estass y a la que te quieras mover.
             </p>
         </article>
         <br><br>
         <article>
         <form action="index.php" method="POST">
-            <label>Casilla donde termina la partida
-            <input type="number" value="0" name="filafinjuego">
-            <input type="number" value="0" name="colfinjuego">
-            </label>
-            <br>
             <label>¿En que casilla estas?
             <input type="number"  value="0" name="ninfila">
             <input type="number"  value="0" name="nincol">
@@ -87,9 +81,6 @@
             $inicioCol = $_POST["nincol"];
             $finFila = $_POST['nfifila'];
             $finCol = $_POST["nficol"];
-            $finFilajuego = $_POST["filafinjuego"];
-            $finColjuego = $_POST["colfinjuego"];
-            $final_juego=$tablero[$finFilajuego][$finColjuego];
             $inicio = $tablero[$inicioFila][$inicioCol];
             $fin = $tablero[$finFila][$finCol];
             tiradaPermitida($inicioFila,$inicioCol,$fin,$tablero,$inicio);
@@ -155,8 +146,4 @@
     }
     echo "<p>No puedes moverte a esa casilla.</p>";
 }
-
-    function pintar ($casilla){
-        
-    }
 ?>
